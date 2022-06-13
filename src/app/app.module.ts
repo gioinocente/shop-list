@@ -14,11 +14,17 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
+import { LoginService } from './services/login/login.service';
+import { ListComponent } from './views/list/list.component';
+import { IncludeComponent } from './views/include/include.component';
+import { ItemService } from './services/item/item.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ListComponent,
+    IncludeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,7 @@ import { environment } from '../environments/environment';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [LoginService, ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

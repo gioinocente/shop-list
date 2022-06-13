@@ -1,0 +1,53 @@
+<table>
+    <tr>
+        <td>
+            <label for="image">
+                <input type="file" name="image" id="image" style="display:none;"/>
+                <img src="./../../../assets/cam-icon.png" style="height: 200px; border-radius: 50%;">
+            </label>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="item.name" #name>
+            </mat-form-field>
+        </td>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Price</mat-label>
+                <input matInput [(ngModel)]="item.price" #price style="text-align: right;">
+                <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Amount</mat-label>
+                <input matInput [(ngModel)]="item.amount" #amount style="text-align: right;">
+            </mat-form-field>
+        </td>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Category</mat-label>
+                <input matInput [(ngModel)]="item.category" #category>
+            </mat-form-field>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput [(ngModel)]="item.description" #description></textarea>
+            </mat-form-field>
+        </td>
+    </tr>
+</table>
+<button mat-raised-button color="primary" (click)="save()">Save</button>
+<button mat-raised-button color="primary" (click)="cancel()">Cancel</button>

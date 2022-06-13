@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div *ngIf="!singUp" class="popup">
+    <h1>Login</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput #emailLogin>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type='password' #passwordLogin>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="onLogin(emailLogin.value, passwordLogin.value)">Login</button>
+    <button mat-raised-button color="primary" (click)="switchMode()">Sing up</button>
+</div>
+<div *ngIf="singUp" class="popup">
+    <h1>Sing up</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput #emailSingUp>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type='password' matInput #passwordSingUp>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="onSingUp(emailSingUp.value, passwordSingUp.value)">Sing Up</button>
+    <button mat-raised-button color="primary" (click)="switchMode()">Login</button>
+</div>
